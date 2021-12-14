@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.headerBottom{
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+}
+
+main{
+    width: 90%;
+    margin: auto;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    width: calc(100% / 5);
+    text-align: center;
+}
+
+i{
+    font-size: 2em;
+}
+
+#orange{
+    color: orange;
+}
+
+#green{
+    color: green;
+}
+
+#blue{
+    color: blue;
+}
