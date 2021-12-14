@@ -134,7 +134,7 @@ const container = document.querySelector(".container");
 
 icons.forEach((element) => {
 	container.innerHTML += `
-	<div class="box">
+	<div class="box invisible ${element.type}">
 	<i class="${element.family} ${element.prefix}${element.name}" id="${element.color}"></i>
 	<h3>${element.name}</h3>
 	</div>
@@ -143,3 +143,62 @@ icons.forEach((element) => {
 
 // 	Milestone 3
 // Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone(animal, vegetable, user).Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
+
+const selectType = document.getElementById("selectType");
+selectType.addEventListener('change', function (){
+	switch (selectType.value) {
+		case 'animal':
+			for (let i = 0; i < icons.length; i++) {
+				const element = icons[i];
+				if (element.type == 'animal') {
+					let animalsCards = document.querySelectorAll(".animal");
+					for (let i = 0; i < animalsCards.length; i++) {
+						animalsCards[i].classList.add("visible");
+						animalsCards[i].classList.remove("invisible");
+					}
+				}
+			}
+			break;
+
+		case 'vegetable':
+			for (let i = 0; i < icons.length; i++) {
+				const element = icons[i];
+				if (element.type == 'vegetable') {
+					let vegetableCards = document.querySelectorAll(".vegetable");
+					for (let i = 0; i < vegetableCards.length; i++) {
+						vegetableCards[i].classList.add("visible")
+						vegetableCards[i].classList.remove("invisible")
+					}
+				}
+			}
+			break;
+
+		case 'user':
+			for (let i = 0; i < icons.length; i++) {
+				const element = icons[i];
+				if (element.type == 'user') {
+					let userCards = document.querySelectorAll(".user");
+					for (let i = 0; i < userCards.length; i++) {
+						userCards[i].classList.add("visible")
+						userCards[i].classList.remove("invisible")
+					}
+				}
+			}
+			break;
+
+		default:
+			for (let i = 0; i < icons.length; i++) {
+				const element = icons[i];
+				if (element.type == 'user' || element.type == 'vegetable' || element.type == 'animal') {
+					let allCards = document.querySelectorAll(".box");
+					for (let i = 0; i < allCards.length; i++) {
+						allCards[i].classList.add("visible")
+						allCards[i].classList.remove("invisible")
+					}
+				}
+			}
+			break;
+		
+	}
+});
+			
