@@ -148,6 +148,7 @@ const selectType = document.getElementById("selectType");
 selectType.addEventListener('change', function (){
 	switch (selectType.value) {
 		case 'animal':
+			// container.innerHTML = '';
 			for (let i = 0; i < icons.length; i++) {
 				const element = icons[i];
 				if (element.type == 'animal') {
@@ -161,6 +162,7 @@ selectType.addEventListener('change', function (){
 			break;
 
 		case 'vegetable':
+			// container.innerHTML = '';
 			for (let i = 0; i < icons.length; i++) {
 				const element = icons[i];
 				if (element.type == 'vegetable') {
@@ -174,6 +176,7 @@ selectType.addEventListener('change', function (){
 			break;
 
 		case 'user':
+			// container.innerHTML = '';
 			for (let i = 0; i < icons.length; i++) {
 				const element = icons[i];
 				if (element.type == 'user') {
